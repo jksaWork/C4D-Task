@@ -29,7 +29,6 @@ class UserHelpers
           $user->setEmail($email);
           $profile  =  new UserProfile();
           $profile->setName($name);
-          $profile->setUserId($user);
           $profile->setAddress($address);
           $profile->setAge($age);
           // 3 - Check If User Data Is Valid

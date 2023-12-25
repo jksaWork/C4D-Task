@@ -23,9 +23,9 @@ class UserProfile
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $address = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user_id = null;
+    // #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    // #[ORM\JoinColumn(nullable: false)]
+    // private ?User $user_id = null;
 
     public function getId(): ?int
     {
@@ -72,15 +72,15 @@ class UserProfile
         return $this;
     }
 
-    public function getUserId(): ?User
-    {
-        return $this->user_id;
-    }
+    // public function getUserId(): ?User
+    // {
+    //     return $this->user_id;
+    // }
 
-    public function setUserId(User $user_id): static
-    {
-        $this->user_id = $user_id;
+    // public function setUserId(User $user_id): static
+    // {
+    //     $this->user_id = $user_id;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }
