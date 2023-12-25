@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+    <h1>Create new User</h1>
+
+    {# {{ include('users/_form.html.twig') }} #}
+
+     <form 
+     enctype="multipart/form-data"
+     action="{{ path('users_update',  {'id': user.id}) }}" method="post" >
+       
+               <label for="username">Email:</label>
+        <input type="text" id="email" name="email" 
+        value="{{ user.email }}"
+        >
+
+        <label for="username">name:</label>
+        <input type="text" id="username"
+        value="{{ user.profile.name }}"
+         name="name">
+
+        <label for="username">address:</label>
+        <input type="text" id="username"
+        value="{{ user.profile.address }}"
+         name="address">
+
+        <label for="username">age:</label>
+        <input type="text" id="username"
+        value="{{ user.profile.age }}"
+         name="age">
+
+        <label for="password">Password:</label>
+        <input type="password" 
+        
+        id="password" name="password">
+
+      {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
+        <button type="submit">edit  user</button>
+ 
+     </form>
+    <a href="{{ path('app_users') }}">back to list</a>
+{% endblock %}
